@@ -1,0 +1,11 @@
+version: "3"
+services:
+  ss-server:
+    image: shadowsocks/shadowsocks-libev:latest
+    environment:
+      - PASSWORD=******
+      - METHOD=aes-256-cfb
+    ports:
+      - "0.0.0.0:8000:8388"
+      - "0.0.0.0:8000:8388/udp"
+    restart: always
