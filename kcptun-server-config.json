@@ -4,5 +4,6 @@
     "mode": "fast3",
     "key": "******",
     "crypt": "aes",
-    "nocomp": true
+    "nocomp": true,
+    "log": "./kcptun-server.log"
 }
