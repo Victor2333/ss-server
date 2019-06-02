@@ -1,0 +1,8 @@
+{
+    "listen": "8010",
+    "target": "127.0.0.1:8000",
+    "mode": "fast3",
+    "key": "******",
+    "crypt": "aes",
+    "nocomp": true
+}
