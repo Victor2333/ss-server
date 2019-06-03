@@ -14,12 +14,25 @@
     }],
     "outbounds": [{
         "protocol": "vmess",
+        "streamSettings": {
+            "network": "mkcp",
+            "kcpSettings": {
+                "uplinkCapacity": 5,
+                "downlinkCapacity": 20,
+                "header": {
+                    "type": "none"
+                }
+            }
+        },
         "settings": {
             "vnext": [{
-                "address": "IPADDR",
+                "address": "${IPADDR}",
                 "port": 8001,
                 "users": [{
-                    "id": "UUID"
+                    "id": "${UUID}",
+                    "level": 0,
+                    "security": "auto",
+                    "alterId": 4
                 }]
             }]
         }

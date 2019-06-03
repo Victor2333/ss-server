@@ -1,0 +1,32 @@
+{
+    "log": {
+        "access": "/etc/v2ray/v2ray-access.log",
+        "error": "/etc/v2ray/v2ray-error.log",
+        "loglevel": "warning"
+    },
+    "inbounds": [{
+        "port": 8388,
+        "protocol": "vmess",
+        "settings": {
+            "clients": [{
+                "id": "${UUID}",
+                "level": 0,
+                "alterId": 4
+            }]
+        },
+        "streamSettings": {
+            "network": "mkcp",
+            "kcpSettings": {
+                "uplinkCapacity": 5,
+                "downlinkCapacity": 20,
+                "header": {
+                    "type": "none"
+                }
+            }
+        }
+    }],
+    "outbounds": [{
+        "protocol": "freedom",
+        "settings": {}
+    }]
+}

@@ -13,8 +13,8 @@ services:
   v-ray-server:
     image: v2ray/official:latest
     ports:
-      - "0.0.0.0:8001:8388"
-      - "0.0.0.0:8001:8388/udp"
+      - "0.0.0.0:8002:8388"
+      - "0.0.0.0:8002:8388/udp"
     volumes:
-      - ./v2ray-server-config.json:/etc/v2ray/config.json
+      - ./v2ray-server:/etc/v2ray
     restart: always
