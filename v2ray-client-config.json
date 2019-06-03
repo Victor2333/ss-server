@@ -17,7 +17,7 @@
         "settings": {
             "vnext": [{
                 "address": "IPADDR",
-                "port": 8002,
+                "port": 8001,
                 "users": [{
                     "id": "UUID"
                 }]
