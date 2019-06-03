@@ -1,0 +1,39 @@
+{
+    "inbounds": [{
+        "port": 8000,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "settings": {}
+    }, {
+        "port": 8001,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {
+            "udp": true
+        }
+    }],
+    "outbounds": [{
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [{
+                "address": "IPADDR",
+                "port": 8002,
+                "users": [{
+                    "id": "UUID"
+                }]
+            }]
+        }
+    }, {
+        "protocol": "freedom",
+        "tag": "direct",
+        "settings": {}
+    }],
+    "routing": {
+        "domainStrategy": "IPOnDemand",
+        "rules": [{
+            "type": "field",
+            "ip": ["geoip:private"],
+            "outboundTag": "direct"
+        }]
+    }
+}
