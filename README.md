@@ -11,7 +11,7 @@ Generator UUID from [UUID Generator](https://www.uuidgenerator.net/)
 Change UUID in ./v2ray-server/config.json and v2ray-client-config.json
 
 ## Step2:
-Change IPADDR in ./v2ray-client-config.json to use your vps ip address.
+Change IPADDR in ./v2ray-client-config.json which is used by your vps ip address.
 
 ## Step3:
 Use Homebrew to install [v2ray](https://github.com/v2ray/homebrew-v2ray)
@@ -20,7 +20,7 @@ Use Homebrew to install [v2ray](https://github.com/v2ray/homebrew-v2ray)
 Copy file from ./v2ray-client-config.json to /usr/local/etc/v2ray/config.json
 
 ## Step5:
-Start your service by ```docker-compose``` up -d and start your client by ```brew services start v2ray-core```
+Start your service by ```docker-compose up -d``` and start your client by ```brew services start v2ray-core```.
 
 ## Step6:
 Setup your http proxy on port 8000 and socks on port 8001
