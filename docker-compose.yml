@@ -10,7 +10,7 @@ services:
       - "0.0.0.0:8000:8388/udp"
     restart: always
 
-  v-ray-server:
+  v2ray-server:
     image: v2ray/official:latest
     ports:
       - "0.0.0.0:8002:8388"
