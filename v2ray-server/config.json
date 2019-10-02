@@ -5,8 +5,30 @@
         "loglevel": "warning"
     },
     "inbounds": [{
-        "port": 8388,
+        "port": "8388",
         "protocol": "vmess",
+        "settings": {
+            "clients": [{
+                "id": "${UUID}",
+                "level": 0,
+                "alterId": 4
+            }]
+        },
+        "detour": {
+            "to": "dynamicPort"
+        },
+        "streamSettings": {
+            "network": "mkcp",
+            "kcpSettings": {
+                "header": {
+                    "type": "none"
+                }
+            }
+        }
+    }, {
+        "port": "10000-10100",
+        "protocol": "vmess",
+        "tag": "dynamicPort",
         "settings": {
             "clients": [{
                 "id": "${UUID}",
@@ -17,12 +39,26 @@
         "streamSettings": {
             "network": "mkcp",
             "kcpSettings": {
-                "uplinkCapacity": 5,
-                "downlinkCapacity": 20,
                 "header": {
                     "type": "none"
                 }
             }
+        },
+        "allocate": {
+            "strategy": "random",
+            "refresh": 5,
+            "concurrency": 3
+        }
+    }, {
+        "port": "8488",
+        "protocol": "shadowsocks",
+        "settings": {
+            "email": "${EMAIL}",
+            "method": "${METHOD}",
+            "password": "${PASSWORD}",
+            "level": 0,
+            "ota": true,
+            "network": "tcp,udp"
         }
     }],
     "outbounds": [{

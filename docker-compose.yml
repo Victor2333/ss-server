@@ -1,20 +1,24 @@
 version: "3"
 services:
-  ss-server:
-    image: shadowsocks/shadowsocks-libev:latest
-    environment:
-      - PASSWORD=******
-      - METHOD=aes-256-cfb
-    ports:
-      - "0.0.0.0:8000:8388"
-      - "0.0.0.0:8000:8388/udp"
-    restart: always
+  # ss-server:
+  #   image: shadowsocks/shadowsocks-libev:latest
+  #   environment:
+  #     - PASSWORD=******
+  #     - METHOD=aes-256-cfb
+  #   ports:
+  #     - "0.0.0.0:8000:8388"
+  #     - "0.0.0.0:8000:8388/udp"
+  #   restart: always
 
   v2ray-server:
     image: v2ray/official:latest
     ports:
-      - "0.0.0.0:8002:8388"
-      - "0.0.0.0:8002:8388/udp"
+      - "0.0.0.0:8388:8388"
+      - "0.0.0.0:8388:8388/udp"
+      - "0.0.0.0:8488:8488"
+      - "0.0.0.0:8488:8488/udp"
+      - "0.0.0.0:10000-10100:10000-10100"
+      - "0.0.0.0:10000-10100:10000-10100/udp"
     volumes:
       - ./v2ray-server:/etc/v2ray
     restart: always
