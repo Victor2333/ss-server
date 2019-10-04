@@ -6,6 +6,7 @@
     },
     "inbounds": [{
         "port": "8388",
+        "listen": "0.0.0.0",
         "protocol": "vmess",
         "settings": {
             "clients": [{
@@ -27,6 +28,7 @@
         }
     }, {
         "port": "10000-10100",
+        "listen": "0.0.0.0",
         "protocol": "vmess",
         "tag": "dynamicPort",
         "settings": {
@@ -51,6 +53,7 @@
         }
     }, {
         "port": "8488",
+        "listen": "0.0.0.0",
         "protocol": "shadowsocks",
         "settings": {
             "email": "${EMAIL}",
