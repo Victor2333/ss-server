@@ -13,10 +13,10 @@
                 "id": "${UUID}",
                 "level": 0,
                 "alterId": 4
-            }]
-        },
-        "detour": {
-            "to": "dynamicPort"
+            }],
+            "detour": {
+                "to": "dynamicPort"
+            }
         },
         "streamSettings": {
             "network": "mkcp",
@@ -27,7 +27,7 @@
             }
         }
     }, {
-        "port": "10000-10100",
+        "port": "10000-11000",
         "listen": "0.0.0.0",
         "protocol": "vmess",
         "tag": "dynamicPort",
